@@ -4,9 +4,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kalkulator</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<h3>Kalkulator</h3>
 
+	<div>
+	  <form id="form">
+	    <input type="text" name="a1" placeholder="Angka 1">
+	    <input type="text" name="a2" placeholder="Angka 2">
+	    <input type="text" name="hasil" disabled>
+
+	    <input type="button" name="tambah" onclick="hitung('+')" value="+">
+	    <input type="button" name="kurang" onclick="hitung('-')" value="-">
+	    <input type="button" name="bagi" onclick="hitung('/')" value="\">
+	    <input type="button" name="kali" onclick="hitung('*')" value="*">
+	    <input type="button" name="pangkat" onclick="hitung('^')" value="^">
+		
+		<button type="button" onclick="batal()">Batal</button>		
+	  </form>
+	</div>
 <script src="script.js"></script>
 </body>
 </html>
