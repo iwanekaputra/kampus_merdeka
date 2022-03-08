@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Info Gempa</title>
+	<style>
+
+		body {
+			width: 70%;
+			margin: 80px auto;
+		}
+
+		h1 {
+			text-align: center;
+			color : grey;
+		}
+
+		#info {
+		  font-family: Arial, Helvetica, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		  text-align: center;
+		}
+
+		#info td, #info th {
+		  border: 1px solid #ddd;
+		  padding: 6px;
+		}
+
+		#info tr:nth-child(even){background-color: #f2f2f2;}
+
+		#info tr:hover {background-color: #ddd;}
+
+		#info th {
+		  padding-top: 12px;
+		  padding-bottom: 12px;
+		  background-color: #04AA6D;
+		  color: white;
+		}
+		</style>
+</head>
+<body>
+	<h1>Info Gempa</h1>
+	<table id="info">
+		<thead>
+			<tr>
+				<th>Lokasi</th>
+				<th>Skala</th>
+				<th>Dampak</th>
+			</tr>
+		</thead>
+		<tbody id="data">
+			
+		</tbody>
+	</table>
+	
+<script>
+	class Gempa {
+		constructor(lokasi, skala) {
+			this.lokasi = lokasi;
+			this.skala = skala;
+		}
+
+		dampak() {
+			let pesanDampak;
+			let data = document.getElementById('data');
+
+			if(this.skala >= 0 && this.skala <= 2) {
+				pesanDampak = 'Tidak terasa';
+			} else if (this.skala > 2 && this.skala <= 4) {
+				pesanDampak = "Bangunan retak retak";
+			} else if (this.skala > 4 && this.skala <= 6) {
+				pesanDampak = "Bangunan roboh";
+			} else if (this.skala > 6) {
+				pesanDampak = "Bangunan roboh dan berpotensi tsunami";
+			}
+
+			data.innerHTML += `<tr>
+								<td>${this.lokasi}</td>
+								<td>${this.skala}</td>
+								<td>${pesanDampak}</td>
+							</tr>`;
+		}
+	}
+
+	let data1 = new Gempa('Pekanbaru', 1);
+	let data2 = new Gempa('Semarang', 2);
+	let data3 = new Gempa('Jambi', 3);
+	let data4 = new Gempa('Bandung', 4);
+	let data5 = new Gempa('Medan', 5);
+	let data6 = new Gempa('Jakarta', 6);
+	let data7 = new Gempa('Kalimantan', 7);
+	let data8 = new Gempa('Dumai', 8);
+	let data9 = new Gempa('Sumatra barat', 9);
+	let data10 = new Gempa('Sumatra utara', 10);
+
+	data1.dampak();
+	data2.dampak();
+	data3.dampak();
+	data4.dampak();
+	data5.dampak();
+	data6.dampak();
+	data7.dampak();
+	data8.dampak();
+	data9.dampak();
+	data10.dampak();
+	
+</script>
+</body>
+</html>
