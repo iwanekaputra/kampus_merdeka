@@ -1,1 +1,1 @@
-# tugasnya ada di branch js_tugas6
+# Semua yang terkait dengan tugas ada pada branch
